@@ -1,14 +1,10 @@
 <?php
-//$pass = readline();
-$pass = 'logIn';
-
+$pass = readline();
 
 checkPass($pass);
 
 function checkPass($pass){
-    
     $valid = true;
- 
     if(strlen($pass)<6 || strlen($pass)>10){
        echo 'Password must be between 6 and 10 characters'.PHP_EOL;
        $valid = false;
@@ -31,9 +27,7 @@ function checkPass($pass){
         
     if($valid){
         echo 'Password is valid';
-    } 
-      
-    
+    }
 }
 
 /*
