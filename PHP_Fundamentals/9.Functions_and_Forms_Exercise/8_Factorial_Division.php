@@ -1,10 +1,6 @@
 <?php
-//$n1 = readline();
-//$n2 = readline();
-
-$n1 = 6;
-$n2 = 2;
-
+$n1 = readline();
+$n2 = readline();
 
 echo factorialDivision($n1,$n2);
 
@@ -19,7 +15,7 @@ function factorialDivision($n1,$n2){
     for ($i = $n2; $i > 0; $i--) {
         $factorielN2 *= $i;
     }
-    $div = $factorielN1/$factorielN2;
+    $div = $factorielN1 /$factorielN2;
   
     $result = number_format($div,2,'.',',');
     
@@ -28,7 +24,8 @@ function factorialDivision($n1,$n2){
 
 /*
 8.Factorial Division
- * Read two integer numbers. Calculate factorial of each number. Divide the first result by the second and print the division formatted to the second decimal point.
+ * Read two integer numbers. Calculate factorial of each number. Divide the first result by
+ * the second and print the division formatted to the second decimal point.
 Examples
 Input	Output		
 5
