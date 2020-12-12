@@ -55,7 +55,6 @@ echo $digit->getLastDigit();
 
 
  /*
-  * zadacha ot PHP_WEB Basic Exercise.Defining Classes mai 2019 - Ivan Jonkov Judge 100%
   * 
   * Problem 9. Last Digit Name
 Write a class Number that will hold an integer number. Write a method in the class that returns the English name of
