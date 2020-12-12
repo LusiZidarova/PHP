@@ -1,7 +1,5 @@
 <?php
-//$s = readline();
-$s = 'absdred';
-
+$s = readline();
 middleCharacters($s);
 
 function middleCharacters($s){
@@ -13,7 +11,6 @@ function middleCharacters($s){
             $middle = (int)($strlength/2);
             echo $s[$middle-1].$s[$middle];
         }
-    
 }
 
 /*
