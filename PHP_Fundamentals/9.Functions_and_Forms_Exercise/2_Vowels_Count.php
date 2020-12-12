@@ -1,7 +1,5 @@
 <?php
-//$s = readline();
-$s = 'SofatUni';
- 
+$s = readline();
 echo countVowels($s);
 
 function countVowels($s){
@@ -11,9 +9,7 @@ function countVowels($s){
       if(in_array(mb_strtolower($s[$i]), $vowels)){
           $count++;
       }
-     
   }
-  
    return $count;
 }
 
