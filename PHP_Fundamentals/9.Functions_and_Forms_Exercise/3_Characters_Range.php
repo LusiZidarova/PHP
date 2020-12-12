@@ -1,9 +1,6 @@
 <?php
-//$firstSymbol = readline();
-//$secondSymbol = readline();
-
-$firstSymbol = 'C';
-$endSymbol = '#';
+$firstSymbol = readline();
+$endSymbol = readline();
 
 printCharacters($firstSymbol,$endSymbol);
 
