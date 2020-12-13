@@ -79,6 +79,7 @@ Input	Output
 321.21
 456.8
 330
+Output
 You are ready for the quest. You will be left with - 658.72 energy!
 Comments
 The days are 10 and the players are 7. The energy of the whole group is 5035.5. We receive the water and food and we can calculate the needed amount of both for the whole quest:
@@ -106,6 +107,8 @@ Input	Output
 212
 412.12
 258
-496	You will run out of energy. You will be left with 229.17 food and 118.59 water.
+496
+Output
+You will run out of energy. You will be left with 229.17 food and 118.59 water.
 
  */
