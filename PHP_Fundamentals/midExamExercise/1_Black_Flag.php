@@ -6,11 +6,8 @@ $gainedPlunder = 0;
 
  for($i=1;$i<=$days;$i++){
      $gainedPlunder +=$dailyPlunder;
-     //echo 'Den '.$i .' ';
-    // echo '$gainedPlunder '.$gainedPlunder.PHP_EOL;
      if($i%3 == 0){
          $gainedPlunder +=$dailyPlunder*0.5;
-        //echo ' 3-ti den $gainedPlunder '.$gainedPlunder.PHP_EOL;
      }
      if($i%5 == 0){//Plunder -=$dailyPlunder;
          $gainedPlunder -=$gainedPlunder*0.3;
@@ -49,12 +46,17 @@ Examples
 Input	Output
 5
 40
-100	Ahoy! 154.00 plunder gained.
+100
+
+Output
+	Ahoy! 154.00 plunder gained.
 Comments
 The days are 5 and the daily plunder is 40. On the third day the total plunder is 120 and since it is a third day, they gain an additional 50% from the daily plunder which adds up to 140. On the fifth day the plunder is 220, but they battle with a warship and lose 30% of the collected cargo and the total becomes 154. That is more than the expected.
-
+Input
 10
 20
-380	Collected only 36.29% of the plunder.
+380
+Output
+Collected only 36.29% of the plunder.
 
  */
