@@ -41,7 +41,14 @@ while($input !== 'Log out'){
 }
 
 echo count($users).' followers'.PHP_EOL;
-
+uksort($users,function($length1,$length2) use ($users) {
+    $len1 = count($users[$length1]);
+    $len2 = count($users[$length2]);
+    if ($len1 === $len2) {
+        return sort($users);
+    }
+    return $len2 <=> $len1;
+});
 foreach($users as $user=>$value){
     echo $user.": ".array_sum($value).PHP_EOL;
 }
