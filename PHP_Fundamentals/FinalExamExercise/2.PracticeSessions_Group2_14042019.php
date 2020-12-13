@@ -35,19 +35,7 @@ while($input != 'END'){
     }
     $input = readline();
 }
-//array_multisort(array_map('count', $roads), SORT_DESC, $roads);
-//print_r($roads);
-//asort($roads[$road]);
-//print_r($roads);
-/*uksort($roads,function($length1,$length2) use ($roads) {
-    $len1 = count($roads[$length1]);
-    $len2 = count($roads[$length2]);
-    if ($len1 === $len2) {
-        return ksort($roads);
-    }
-    return $len2 <=> $len1;
-});*/
-//print_r($roads);
+
 $counts = array_map(function($v) { return count($v); }, $roads);
 
 $keys = array_keys($roads);
