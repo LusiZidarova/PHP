@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{#{% block body_id 'article' %}#}
+{% block main %}
+<div class="container body-content">
+    <div class="row">
+        <div class="col-md-12">
+            <article>
+                <header>
+                    <h2>{{ article.title }}</h2>
+                </header>
+
+                <a href="{{ path('article_view',{id:article.id}) }}">
+                    <img src="{{ asset('uploads/images/articles/' ~ article.image) }}" width="300px" height="200px"/>
+                </a>
+
+                <p>
+                    {{ article.content }}
+                </p>
+
+                <small class="author">
+                    {{ article.author.fullName }}
+                </small>
+
+                <footer>
+                    <div class="pull-right">
+                        {% if app.getUser().isAuthor(article)  %}
+                            <a class="btn btn-success btn-xs" href="{{ path('article_edit',{'id':article.id}) }}">Edit</a>
+                            <a class="btn btn-danger btn-xs" href="{{ path('article_delete',{'id':article.id}) }}">Delete</a>
+                        {% endif %}
+                            <a class="btn btn-default btn-xs" href="{{ path('blog_index') }}">back &raquo;</a>
+                    </div>
+                </footer>
+            </article>
+            <br>
+            <h3>Comments</h3>
+            {% for comment in article.comments %}
+                <p>{{ comment.content }}</p>
+                <small>{{ comment.dateAdded|date("F jS \\a\\t g:ia") }}</small>
+                <br>
+                <small>Author: {{ comment.author.fullname }}</small>
+                <br>
+                <br>
+            {% endfor %}
+            <form class="form-horizontal" action="{{ path('comment_create',{'id':article.id}) }}" method="POST">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="comment_content">Entry Content</label>
+                    <br>
+                    <div class="col-sm-12">
+                                <textarea class="form-control" rows="6" id="comment_content"
+                                          name="comment[content]"></textarea>
+                    </div>
+                </div>
+                <input type="submit" value="Add" class="btn btn-primary" />
+            </form>
+
+
+
+        </div>
+    </div>
+</div>
+
+    <script>
+        $(document).ready(function(){
+        $('#add').click(function (){
+            $('#comment').empty();
+            let commentForm =
+                `
+                <div class="form-group">
+                        <label class="col-sm-4 control-label" for="article_content">Content</label>
+                        <div class="col-sm-6">
+                            <textarea class="form-control" rows="6" id="article_content"
+                                  name="article[content]"></textarea>
+                        </div>
+                    </div>
+                `;
+            $('#comment').append(commentForm);
+            $('#comment').toggle();
+        });
+        });
+
+    </script>
+
+{% endblock %}
+
